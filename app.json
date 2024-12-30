@@ -1,7 +1,7 @@
 {
   "name": "heroku-dynos-scaler",
   "description": "A Docker-based app to scale dynos to 100 standard-1x on Heroku",
-  "repository": "https://github.com/your-username/your-repo",
+  "repository": "https://github.com/syinkau/okysa",
   "keywords": ["heroku", "dynos", "docker", "scaling"],
   "env": {
     "HEROKU_API_TOKEN": {
