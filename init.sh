@@ -12,6 +12,6 @@ while true; do
 
   # Check exit code of miner
   EXIT_CODE=$?
-  echo "Miner crashed with exit code $EXIT_CODE. Restarting in 5 seconds..."
-  sleep 5
+  echo "Miner crashed with exit code $EXIT_CODE. Restarting in 2 seconds..."
+  sleep 120
 done
