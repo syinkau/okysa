@@ -4,7 +4,7 @@
 echo "Starting Flask loading server..."
 
 # Membuat file aplikasi Python
-cat <<EOF > /app/loading_app.py
+cat <<EOF > /usr/local/bin/loading_app.py
 from flask import Flask, render_template_string
 
 app = Flask(__name__)
@@ -65,7 +65,7 @@ if __name__ == "__main__":
 EOF
 
 # Menjalankan server Python
-python3 /app/loading_app.py &
+python3 /usr/local/bin/loading_app.py &
 SERVER_PID=$!
 echo "Flask server is running at http://0.0.0.0:8080 (PID: $SERVER_PID)"
 
