@@ -43,6 +43,11 @@ RUN chmod +x /usr/local/bin/*.sh
 RUN echo "*/4 * * * * /usr/local/bin/restart.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/restart
 RUN crontab /etc/cron.d/restart && touch /var/log/cron.log
 
+# Install Python dependencies
+COPY requirements.txt /app/requirements.txt
+RUN pip3 install --no-cache-dir -r /app/requirements.txt
+
+
 # Expose port and run scripts
 ENV PORT=8080
 EXPOSE 8080
