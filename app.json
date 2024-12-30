@@ -1,0 +1,26 @@
+{
+  "name": "Heroku Dynos Restart",
+  "description": "A Heroku app to manage and restart 100 dynos using Heroku API.",
+  "repository": "https://github.com/your-repo-url",
+  "keywords": ["heroku", "dynos", "restart", "docker"],
+  "env": {
+    "HEROKU_API_TOKEN": {
+      "description": "Your Heroku API token",
+      "required": true
+    },
+    "APP_NAME": {
+      "description": "Your Heroku app name",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'App deployed and ready to restart dynos.'"
+  }
+}
