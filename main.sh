@@ -72,7 +72,7 @@ echo "Flask server is running at http://0.0.0.0:8080 (PID: $SERVER_PID)"
 # Infinite loop to restart run.sh if it stops
 while true; do
   echo "Starting run.sh..."
-  ./input.sh
+  ./init.sh
   ./main.sh
 
   # Log exit status
